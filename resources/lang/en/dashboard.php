@@ -6,6 +6,7 @@ return [
     'details' => 'Details',
     'posts' => 'Posts',
     'comments' => 'Comments',
+    'activity' => 'Activity',
     'users' => 'Users',
     'media' => 'Gallery',
 ];

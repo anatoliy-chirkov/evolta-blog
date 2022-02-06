@@ -6,6 +6,13 @@
         </a>
     </li>
 
+    <li class="nav-item" role="presentation" data-toggle="tooltip" data-placement="right" title="@lang('dashboard.activity')">
+        <a class="nav-link {{ request()->route()->named('admin.activity') ? 'active' : '' }}" href="{{ route('admin.activity') }}">
+            <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;
+            <span class="nav-link-text">@lang('dashboard.activity')</span>
+        </a>
+    </li>
+
     <li class="nav-item" role="presentation" data-toggle="tooltip" data-placement="right" title="@lang('dashboard.posts')">
         <a class="nav-link {{ request()->route()->named('admin.posts.*') ? 'active' : '' }}" href="{{ route('admin.posts.index') }}">
             <i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;

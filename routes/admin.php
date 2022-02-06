@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('dashboard', 'ShowDashboard')->name('dashboard');
+Route::get('activity', 'ShowActivity')->name('activity');
 Route::resource('posts', 'PostController');
 Route::delete('/posts/{post}/thumbnail', 'PostThumbnailController@destroy')->name('posts_thumbnail.destroy');
 Route::resource('users', 'UserController')->only(['index', 'edit', 'update']);

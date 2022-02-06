@@ -3,5 +3,6 @@
 composer install --no-interaction --no-ansi --optimize-autoloader --apcu-autoloader
 rm -rf ~/.composer/cache/*
 php artisan migrate --force
+php artisan db:seed
 php artisan key:generate --force
 php-fpm
