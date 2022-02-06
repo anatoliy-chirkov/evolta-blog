@@ -59,7 +59,13 @@ final class ActivityJsonRpcAdapter implements ActivityLogger, ActivityStorage
             'params' => $params,
         ];
 
-        $response = Http::withHeaders($headers)->post(config('activity.url'), $data)->json();
+        try {
+            $response = Http::withHeaders($headers)->post(config('activity.url'), $data)->json();
+        } catch (\Throwable $e) {
+            Log::error('Activity app is not accessible');
+
+            return null;
+        }
 
         if (null === $response) {
             Log::error('Activity app not returned any content');
@@ -73,7 +79,7 @@ final class ActivityJsonRpcAdapter implements ActivityLogger, ActivityStorage
             return null;
         }
 
-        if (!isset($response['result'])) {
+        if (!array_key_exists('result', $response)) {
             Log::error('Activity app returned response without \'result\' key presented');
 
             return null;
