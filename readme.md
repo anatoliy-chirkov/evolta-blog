@@ -1,10 +1,9 @@
-# Evolta Blog
+# Laravel Blog
 
 ### Setup
 1. `docker network create evolta`
 2. `cp .env.example .env`
-3. Add token from evolta_activity app to .env: ACTIVITY_APP_KEY
-4. `docker-compose up -d --build`
+3. `docker-compose up -d --build`
 
 App URL: `127.0.0.1:84`
 
